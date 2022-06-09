@@ -12,9 +12,6 @@ $router = new \CoffeeCode\Router\Router( $_ENV['BASE_URL'] );
 //Informar o diretorio onde os controladores se encontram
 $router->namespace( "App\Controller" );
 
-//Router principal
-$router->group( null );
-// Primeiro rota dinamica e depois rota estatica
 $router->get( "/", "Main:index" );
 
 $router->dispatch();
