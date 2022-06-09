@@ -16,6 +16,7 @@ CREATE TABLE tb_cargo (
 );
 
 INSERT INTO tb_cargo(cargo) VALUE('Professor');
+INSERT INTO tb_cargo(cargo) VALUE('Orientador Educacional'); 
 INSERT INTO tb_cargo(cargo) VALUE('Secretário');
 INSERT INTO tb_cargo(cargo) VALUE('Administrativo');
 INSERT INTO tb_cargo(cargo) VALUE('Auxiliar');
