@@ -9,11 +9,13 @@ CREATE TABLE tb_servidor (
   PRIMARY KEY(id)
 );
 
+-- PROFESSOR, SECRETARIO, ADMINISTRATIVO, AUXILIAR
 CREATE TABLE tb_cargo (
   id int NOT NULL AUTO_INCREMENT,
   cargo varchar(45) NOT NULL,
   PRIMARY KEY(id)
 );
+
 
 CREATE TABLE tb_abono (
   id int NOT NULL AUTO_INCREMENT,
@@ -25,6 +27,7 @@ CREATE TABLE tb_abono (
   PRIMARY KEY (id)
 );
 
+-- TRE / ABONO / ATESTADO MEDICO
 CREATE TABLE tb_tipo_abono (
   id int NOT NULL AUTO_INCREMENT,
   tipo varchar(45) NOT NULL,
