@@ -9,13 +9,16 @@ CREATE TABLE tb_servidor (
   PRIMARY KEY(id)
 );
 
--- PROFESSOR, SECRETARIO, ADMINISTRATIVO, AUXILIAR
 CREATE TABLE tb_cargo (
   id int NOT NULL AUTO_INCREMENT,
   cargo varchar(45) NOT NULL,
   PRIMARY KEY(id)
 );
 
+INSERT INTO tb_cargo(cargo) VALUE('Professor');
+INSERT INTO tb_cargo(cargo) VALUE('Secretário');
+INSERT INTO tb_cargo(cargo) VALUE('Administrativo');
+INSERT INTO tb_cargo(cargo) VALUE('Auxiliar');
 
 CREATE TABLE tb_abono (
   id int NOT NULL AUTO_INCREMENT,
@@ -27,12 +30,17 @@ CREATE TABLE tb_abono (
   PRIMARY KEY (id)
 );
 
--- TRE / ABONO / ATESTADO MEDICO
+
 CREATE TABLE tb_tipo_abono (
   id int NOT NULL AUTO_INCREMENT,
   tipo varchar(45) NOT NULL,
   PRIMARY KEY (id)
 );
+
+INSERT INTO tb_tipo_abono(tipo) VALUE('TRE');
+INSERT INTO tb_tipo_abono(tipo) VALUE('Abono');
+INSERT INTO tb_tipo_abono(tipo) VALUE('Atestado Médico');
+
 
 ALTER TABLE tb_servidor
   ADD CONSTRAINT fk_servidor_cargo FOREIGN KEY (cargo) REFERENCES tb_cargo (id) ON DELETE RESTRICT ON UPDATE RESTRICT;
