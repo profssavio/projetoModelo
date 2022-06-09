@@ -1,0 +1,23 @@
+{% extends 'Layout/Dashboard.html' %}
+{% block title %} {{titulo}} {% endblock %}
+
+{% block stylesheet %}{% endblock %}
+
+{% block breadcrumb %}{% endblock %}
+
+{% block content %}
+    {{conteudo}}
+{% endblock %}
+
+{% block jquery %}
+<script src="{{base_adminlte}}/plugins/jquery/jquery.min.js"></script>
+{% endblock %}
+
+{% block javascriptPlugins %}
+<script src="{{base_adminlte}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{base_adminlte}}/dist/js/adminlte.min.js"></script>
+{% endblock %}
+
+{% block javascript %}
+<script src="{{base_adminlte}}/dist/js/demo.js"></script>
+{% endblock %}
