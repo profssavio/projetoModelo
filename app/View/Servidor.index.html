@@ -41,7 +41,7 @@
                 <tr>
                   <td>1.</td>
                   <td>{{servidor.matricula}}</td>
-                  <td>{{servidor.nome}}</td>
+                  <td>{{servidor.nome |upper }}</td>
                   <td>{{servidor.cargo}}</td>
                   <td>{{servidor.data_admissao | format_date(pattern="dd/MM/Y") }}</td>
                   <td>{{servidor.situacao}}</td>
