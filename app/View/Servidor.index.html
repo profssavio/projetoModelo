@@ -45,7 +45,12 @@
                   <td>{{servidor.cargo}}</td>
                   <td>{{servidor.data_admissao | format_date(pattern="dd/MM/Y") }}</td>
                   <td>{{servidor.situacao}}</td>
-                  <td>&nbsp;</td>
+                  <td>
+                     <i class="fa fa-solid fa-eye"></i>                  
+                     <i class="fa fa-solid fa-user"></i> 
+                     <i class="fa fa-solid fa-thumbs-up"></i>
+                     <i class="fa fa-solid fa-thumbs-down"></i>
+                  </td>
                 </tr>
                 {% endfor %}
               </tbody>
