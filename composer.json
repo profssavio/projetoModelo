@@ -8,6 +8,8 @@
         "twig/twig": "^3.0",
         "vlucas/phpdotenv": "^5.4",
         "coffeecode/router": "^2.0",
-        "almasaeed2010/adminlte": "^3.2"
+        "almasaeed2010/adminlte": "^3.2",
+        "twig/intl-extra": "^3.4",
+        "twig/extra-bundle": "^3.4"
     }
 }

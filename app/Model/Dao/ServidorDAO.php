@@ -2,7 +2,6 @@
 namespace App\Model\Dao;
 
 use App\config\Conexao;
-use App\Model\Entity\Servidor;
 use PDO;
 use PDOException;
 
@@ -16,10 +15,12 @@ class ServidorDAO {
 
     public function findAll() {
         try {
-            $sql  = "SELECT * FROM tb_servidor";
+            $sql = "SELECT servidor.id, servidor.matricula , servidor.nome, servidor.situacao, servidor.data_admissao, cargo.cargo "
+                . "FROM tb_servidor as servidor "
+                . "INNER JOIN tb_cargo as cargo ON servidor.cargo = cargo.id";
             $stmt = $this->pdo->prepare( $sql );
             $stmt->execute();
-            return $stmt->fetchAll( PDO::FETCH_CLASS, Servidor::class );
+            return $stmt->fetchAll( PDO::FETCH_ASSOC );
         } catch ( PDOException $e ) {
             echo $e->getMessage();
         }

@@ -1,5 +1,7 @@
 FROM php:8.1.6-apache
 
+ENV TZ=America/Sao_Paulo
+
 WORKDIR /var/www/html
 
 # Install system dependencies
@@ -10,10 +12,13 @@ RUN apt-get clean && apt-get update -y && apt-get install -y \
     vim \
     unzip \
     wget \
-    nano
+    nano \
+    libicu-dev \
+    libxml2-dev \ 
+    libonig-dev
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo pdo_mysql 
+RUN docker-php-ext-install pdo pdo_mysql intl iconv opcache bcmath xml soap mbstring
 
 # Install XDebug
 RUN pecl install xdebug

@@ -7,6 +7,7 @@ class Servidor {
     private string $matricula;
     private string $nome;
     private string $situacao;
+    private Cargo $cargo;
 
     public function getId(): int {
         return $this->id;
@@ -41,6 +42,15 @@ class Servidor {
 
     public function setSituacao( string $situacao ): Servidor {
         $this->situacao = $situacao;
+        return $this;
+    }
+
+    public function getCargo(): Cargo {
+        return $this->cargo;
+    }
+
+    public function setCargo( Cargo $cargo ) {
+        $this->cargo = $cargo;
         return $this;
     }
 }
