@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-Class CarregadorTwig {
+Class CarregadorTwigController {
 
     protected $twig;
     /**
@@ -10,5 +10,11 @@ Class CarregadorTwig {
     public function __construct() {
         $loader     = new \Twig\Loader\FilesystemLoader( $_ENV['TEMPLATE_DIR'] );
         $this->twig = new \Twig\Environment( $loader );
+        $this->setGlobal();
+    }
+
+    public function setGlobal() {
+        $this->twig->addGlobal( 'base_adminlte', $_ENV['BASE_URL'] . "/vendor/almasaeed2010/adminlte" );
+        $this->twig->addGlobal( 'base_url', $_ENV["BASE_URL"] );
     }
 }

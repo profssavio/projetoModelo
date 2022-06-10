@@ -1,0 +1,18 @@
+{% extends 'Layout/Dashboard.html' %}
+{% block title %} {{titulo}} {% endblock %}
+
+{% block stylesheet %}{% endblock %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block content %}
+    
+    {% for servidor in servidores %}
+        {{servidor.matricula}}
+        {{servidor.nome}}        
+        {{servidor.situacao}} 
+        {{servidor.cargo}}               
+    {% endfor %}
+
+{% endblock %}

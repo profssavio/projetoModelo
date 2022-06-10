@@ -2,11 +2,11 @@
 namespace App\Model\Dao;
 
 use App\config\Conexao;
-use App\Model\Entity\Cliente;
+use App\Model\Entity\Servidor;
 use PDO;
 use PDOException;
 
-class ClienteDAO {
+class ServidorDAO {
 
     private PDO $pdo;
 
@@ -16,10 +16,10 @@ class ClienteDAO {
 
     public function findAll() {
         try {
-            $sql  = "SELECT * FROM tb_cliente";
+            $sql  = "SELECT * FROM tb_servidor";
             $stmt = $this->pdo->prepare( $sql );
             $stmt->execute();
-            return $stmt->fetchAll( PDO::FETCH_CLASS, Cliente::class );
+            return $stmt->fetchAll( PDO::FETCH_CLASS, Servidor::class );
         } catch ( PDOException $e ) {
             echo $e->getMessage();
         }

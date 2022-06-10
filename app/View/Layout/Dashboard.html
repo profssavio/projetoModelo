@@ -43,9 +43,18 @@
 </div>
 <!-- ./wrapper -->
 
-{% block jquery %}{% endblock %}
-{% block javascriptPlugins %}{% endblock %}
-{% block javascript %}{% endblock %}
+{% block jquery %}
+<script src="{{base_adminlte}}/plugins/jquery/jquery.min.js"></script>
+{% endblock %}
+
+{% block javascriptPlugins %}
+<script src="{{base_adminlte}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{base_adminlte}}/dist/js/adminlte.min.js"></script>
+{% endblock %}
+
+{% block javascript %}
+<script src="{{base_adminlte}}/dist/js/demo.js"></script>
+{% endblock %}
 
 </body>
 </html>

@@ -12,6 +12,10 @@ $router = new \CoffeeCode\Router\Router( $_ENV['BASE_URL'] );
 //Informar o diretorio onde os controladores se encontram
 $router->namespace( "App\Controller" );
 
-$router->get( "/", "Main:index" );
+$router->group( null );
+$router->get( "/", "MainController:index" );
+
+$router->group( "servidor" );
+$router->get( "/", "ServidorController:index" );
 
 $router->dispatch();

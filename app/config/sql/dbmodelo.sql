@@ -50,6 +50,8 @@ ALTER TABLE tb_abono
   ADD CONSTRAINT fk_abono_servidor FOREIGN KEY (servidor) REFERENCES tb_servidor (id) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT fk_abono_tipo_abono FOREIGN KEY (tipo_abono) REFERENCES tb_tipo_abono (id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
-
+-- Carga de exemplo SERVIDOR
+INSERT INTO tb_servidor (matricula,nome,situacao,data_admissao,cargo)
+VALUES ('2237865', 'Sávio Chaves Cardoso da Silva', 'A', '2022-05-02', '1');
 
 
