@@ -16,9 +16,10 @@ class ServidorController {
         $this->servidorService = $servidorService;
     }
 
-    public function index( RequestInterface $request, ResponseInterface $response ): ResponseInterface {
-        $servidores = $this->servidorService->findAll();
-        $response->getBody()->write( json_encode( $servidores ) );
+    public function index( RequestInterface $request, ResponseInterface $response, array $args ): ResponseInterface {
+        $dados["servidores"] = $this->servidorService->findAll();
+        $body                = $this->view->render( 'Servidor.index.html', $dados );
+        $response->getBody()->write( $body );
         return $response;
     }
 
