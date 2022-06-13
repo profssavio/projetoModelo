@@ -3,18 +3,13 @@ namespace app\controllers;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Slim\Views\Twig;
 
-class HomeController {
-
-    private $view;
-
-    public function __construct( Twig $view ) {
-        $this->view = $view;
-    }
+class HomeController extends Controller {
 
     public function index( ServerRequestInterface $request, ResponseInterface $response, array $dados ): ResponseInterface {
-        $response->getBody()->write( "Teste de pagina" );
+        $dados["titulo"] = "Pagina inicial";
+        $body            = $this->view( 'Main.index.html', $dados );
+        $response->getBody()->write( $body );
         return $response;
     }
 }

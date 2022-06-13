@@ -10,7 +10,9 @@
         "almasaeed2010/adminlte": "^3.2",
         "twig/intl-extra": "^3.4",
         "twig/extra-bundle": "^3.4",
-        "slim/slim": "4.*",
-        "slim/psr7": "^1.5"
+        "slim/psr7": "^1.5",
+        "slim/slim": "4.10.0",
+        "psr/container": "^1.1",
+        "php-di/slim-bridge": "^3.2"        
     }
 }
