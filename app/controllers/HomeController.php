@@ -1,14 +1,21 @@
 <?php
 namespace app\controllers;
 
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Twig\Environment;
 
-class HomeController extends Controller {
+class HomeController {
 
-    public function index( ServerRequestInterface $request, ResponseInterface $response, array $dados ): ResponseInterface {
+    private Environment $view;
+
+    public function __construct( Environment $view ) {
+        $this->view = $view;
+    }
+
+    public function index( RequestInterface $request, ResponseInterface $response ): ResponseInterface {
         $dados["titulo"] = "Pagina inicial";
-        $body            = $this->view( 'Main.index.html', $dados );
+        $body            = $this->view->render( 'Main.index.html', $dados );
         $response->getBody()->write( $body );
         return $response;
     }

@@ -1,19 +1,21 @@
 <?php
-namespace app\controllers;
 
-use app\Service\ServidorService;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 class ServidorController {
 
-    private ServidorService $servidorService;
+    // private Environment $view;
+    // private ServidorService $servidorService;
 
-    public function __construct( ServidorService $servidorService ) {
-        $this->servidorService = $servidorService;
-    }
+    // public function __construct( Environment $view, ServidorService $servidorService ) {
+    //     $this->view            = $view;
+    //     $this->servidorService = $servidorService;
+    // }
 
-    public function index() {
-        echo "teste asdasad";
-        var_dump( $this->servidorService->findAll() );
+    public function index( RequestInterface $request, ResponseInterface $response ): ResponseInterface {
+        $response->getBody()->write( 'teste' );
+        return $response;
     }
 
 }
